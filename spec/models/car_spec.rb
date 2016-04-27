@@ -25,4 +25,11 @@ RSpec.describe Car, type: :model do
       expect(@car).not_to be_valid
     end
   end
+
+  describe "when car already exists" do
+    it "is not valid" do
+      identical_car = @car.dup
+      expect(identical_car).not_to be_valid
+    end
+  end
 end
