@@ -5,6 +5,7 @@ import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
 import { CarsController } from './components/cars.controller';
+import { CarsNewController } from './components/cars-new.controller';
 import { GithubContributor } from '../app/components/githubContributor/githubContributor.service';
 import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service';
 import { acmeNavbar } from '../app/components/navbar/navbar.directive';
@@ -37,6 +38,7 @@ module dreamCars {
     .service('webDevTec', WebDevTecService)
     .controller('MainController', MainController)
     .controller('CarsController', CarsController)
+    .controller('CarsNewController', CarsNewController)
     .directive('acmeNavbar', acmeNavbar)
     .directive('acmeMalarkey', acmeMalarkey)
     .factory('Car', (railsResourceFactory: any) => {

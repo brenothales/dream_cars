@@ -6,6 +6,11 @@ export function routerConfig($routeProvider: angular.route.IRouteProvider) {
       controller: 'CarsController',
       controllerAs: 'cars'
     })
+    .when('/cars-new', {
+      templateUrl: 'app/components/cars-new.html',
+      controller: 'CarsNewController',
+      controllerAs: 'cars'
+    })
     .otherwise({
       redirectTo: '/'
     });
