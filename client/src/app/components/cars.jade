@@ -1,6 +1,6 @@
-div(ng-include='', src="'app/components/navbar/navbar.html'")
-
 .container
+  div(ng-include='', src="'app/components/navbar/navbar.html'")
+
   h1 Cars
   li(ng-repeat='car in cars.list')
     {{ car.year }} {{ car.make }} {{ car.model }}
