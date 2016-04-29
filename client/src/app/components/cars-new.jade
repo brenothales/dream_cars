@@ -6,14 +6,29 @@
   form
     .form-group
       label(for='year') Year
-      input.form-control(type='text' name='year' id='year')
+      input.form-control(
+        type='text'
+        name='year'
+        id='year'
+        ng-model='cars.car.year'
+      )
 
     .form-group
       label(for='make') Make
-      input.form-control(type='text' name='make' id='make')
+      input.form-control(
+        type='text'
+        name='make'
+        id='make'
+        ng-model='cars.car.make'
+      )
 
     .form-group
       label(for='model') Model
-      input.form-control(type='text' name='model' id='model')
+      input.form-control(
+        type='text'
+        name='model'
+        id='model'
+        ng-model='cars.car.model'
+      )
 
-    button.btn.btn-primary(type='submit') Create Car
+    button.btn.btn-primary(type='submit' ng-click='cars.save(cars.car)') Create Car

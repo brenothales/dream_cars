@@ -2,5 +2,8 @@
   div(ng-include='', src="'app/components/navbar/navbar.html'")
 
   h1 Cars
+
+  a(ng-href='/cars-new') New Car
+
   li(ng-repeat='car in cars.list')
     {{ car.year }} {{ car.make }} {{ car.model }}
