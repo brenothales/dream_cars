@@ -1,12 +1,10 @@
 export class CarsNewController {
   public car;
-  public $location;
 
-  constructor(Car: any, $location: any) {
+  constructor(Car: any, public $location: angular.ILocationService) {
     /* tslint:disable */ 'ngInject'; /* tslint:enable */
 
     this.car = new Car();
-    this.$location = $location;
   }
 
   save(car: any) {
