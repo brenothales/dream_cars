@@ -1,7 +1,9 @@
 export class CarsController {
-  constructor ($scope, Car) {
-    'ngInject';
+  public list;
 
-    Car.query().then(cars => $scope.cars = cars);
+  constructor(Car: any) {
+    /* tslint:disable */ 'ngInject'; /* tslint:enable */
+
+    Car.query().then((cars: any) => this.list = cars);
   }
 }

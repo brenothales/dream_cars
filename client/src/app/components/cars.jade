@@ -2,5 +2,5 @@ div(ng-include='', src="'app/components/navbar/navbar.html'")
 
 .container
   h1 Cars
-  li(ng-repeat='car in cars')
+  li(ng-repeat='car in cars.list')
     {{ car.year }} {{ car.make }} {{ car.model }}

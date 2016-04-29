@@ -39,10 +39,10 @@ module dreamCars {
     .controller('CarsController', CarsController)
     .directive('acmeNavbar', acmeNavbar)
     .directive('acmeMalarkey', acmeMalarkey)
-    .factory('Car', railsResourceFactory => {
+    .factory('Car', (railsResourceFactory: any) => {
       return railsResourceFactory({
         url: '/api/cars',
         name: 'car'
       });
-    });
+  }).config(($locationProvider: any) => $locationProvider.html5Mode(true));
 }
