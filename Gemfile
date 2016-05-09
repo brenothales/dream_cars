@@ -5,6 +5,7 @@ gem 'rails-api'
 gem 'pg'
 gem 'active_model_serializers'
 gem 'rack-cors'
+gem 'rack-rewrite'
 
 gem 'spring', :group => :development
 
