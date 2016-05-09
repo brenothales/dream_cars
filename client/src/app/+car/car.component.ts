@@ -13,7 +13,7 @@ export class CarComponent implements OnInit {
   constructor(public http: Http) {}
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/api/cars.json')
+    this.http.get('/api/cars.json')
       .subscribe(response => this.cars = response.json());
   }
 
