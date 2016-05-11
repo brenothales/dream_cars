@@ -6,6 +6,7 @@ gem 'pg'
 gem 'active_model_serializers'
 gem 'rack-cors'
 gem 'rack-rewrite'
+gem 'foreman'
 
 gem 'spring', :group => :development
 
