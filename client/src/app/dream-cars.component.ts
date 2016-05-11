@@ -9,9 +9,11 @@ import { Routes, ROUTER_DIRECTIVES} from '@angular/router';
   styleUrls: ['dream-cars.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
+
 @Routes([
   {path: '/car', component: CarComponent}
 ])
+
 export class DreamCarsAppComponent {
-  title = 'dream-cars works!';
+  title = 'Dream Cars';
 }
