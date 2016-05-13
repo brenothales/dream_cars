@@ -23,15 +23,6 @@ describe('Component: CarForm', () => {
       (component: CarFormComponent) => {
     expect(component).toBeTruthy();
   }));
-
-  it('should create the component', inject([], () => {
-    return builder.createAsync(CarFormComponentTestController)
-      .then((fixture: ComponentFixture<any>) => {
-        let query = fixture.debugElement.query(By.directive(CarFormComponent));
-        expect(query).toBeTruthy();
-        expect(query.componentInstance).toBeTruthy();
-      });
-  }));
 });
 
 @Component({
