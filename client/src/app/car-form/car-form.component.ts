@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-car-form',
+  selector: 'car-form',
   templateUrl: 'car-form.component.html',
   styleUrls: ['car-form.component.css']
 })
