@@ -8,7 +8,10 @@ gem 'rack-cors'
 gem 'rack-rewrite'
 gem 'foreman'
 
-gem 'spring', :group => :development
+group :development do
+  gem 'spring'
+  gem 'pry'
+end
 
 group :test do
   gem 'rspec-rails'
