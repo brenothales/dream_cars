@@ -14,13 +14,17 @@ export class CarComponent implements OnInit {
 
   constructor(public http: Http, public router: Router) {}
 
+  ngOnInit() {
+    this.load();
+  }
+
   load() {
     this.http.get('/api/cars.json')
       .subscribe(response => this.cars = response.json());
   }
 
-  ngOnInit() {
-    this.load();
+  edit(id: number) {
+    this.router.navigate(['/edit-car/' + id])
   }
 
   delete(id: number) {

@@ -32,6 +32,7 @@ const barrels: string[] = [
   'app/+car',
   'app/car-form',
   'app/+new-car',
+  'app/+edit-car',
   /** @cli-barrel */
 ];
 

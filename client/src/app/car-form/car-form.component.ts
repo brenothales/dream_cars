@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Http, HTTP_PROVIDERS, Headers, RequestOptions } from '@angular/http';
 import { NgForm } from '@angular/common';
 import { Router } from '@angular/router';
@@ -12,11 +12,16 @@ import { Car } from '../car';
 })
 
 export class CarFormComponent implements OnInit {
+  @Input() id;
 
   car = new Car();
   constructor(public http: Http, public router: Router) {}
 
   ngOnInit() {
+    if (this.id) {
+      this.http.get('/api/cars/' + this.id + '.json')
+        .subscribe(response => this.car = response.json());
+    }
   }
 
   onSubmit() {
