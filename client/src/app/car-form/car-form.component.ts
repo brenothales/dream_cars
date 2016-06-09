@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, HTTP_PROVIDERS, Headers, RequestOptions } from '@angular/http';
 import { NgForm } from '@angular/common';
 import { Car } from '../car';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -13,7 +14,7 @@ import { Car } from '../car';
 export class CarFormComponent implements OnInit {
 
   car = new Car(0, '2002', 'BMW', '325xi');
-  constructor(public http: Http) {}
+  constructor(public http: Http, public router: Router) {}
 
   ngOnInit() {
   }
@@ -24,7 +25,7 @@ export class CarFormComponent implements OnInit {
     let options = new RequestOptions({ headers: headers });
 
     this.http.post('/api/cars.json', body, options)
-      .subscribe(response => console.log(response));
+      .subscribe(response => this.router.navigate(['/car']));
   }
 
 }

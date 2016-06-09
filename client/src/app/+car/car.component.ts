@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, HTTP_PROVIDERS } from '@angular/http';
-import { CarFormComponent } from '../car-form'
 
 @Component({
   moduleId: module.id,
   selector: 'app-car',
   templateUrl: 'car.component.html',
-  styleUrls: ['car.component.css'],
-  directives: [CarFormComponent]
+  styleUrls: ['car.component.css']
 })
 
 export class CarComponent implements OnInit {
