@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CarComponent } from './+car';
 import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
+import { CarComponent } from './+car';
 import { NewCarComponent } from './+new-car';
 
 @Component({

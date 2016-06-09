@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, HTTP_PROVIDERS, Headers, RequestOptions } from '@angular/http';
 import { NgForm } from '@angular/common';
-import { Car } from '../car';
 import { Router } from '@angular/router';
+import { Car } from '../car';
 
 @Component({
   moduleId: module.id,

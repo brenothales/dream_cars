@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, HTTP_PROVIDERS } from '@angular/http';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -11,10 +12,14 @@ import { Http, HTTP_PROVIDERS } from '@angular/http';
 export class CarComponent implements OnInit {
   cars: any;
 
-  constructor(public http: Http) {}
+  constructor(public http: Http, public router: Router) {}
 
   ngOnInit() {
     this.http.get('/api/cars.json')
       .subscribe(response => this.cars = response.json());
+  }
+
+  goToNew() {
+    this.router.navigate(['/new-car'])
   }
 }
