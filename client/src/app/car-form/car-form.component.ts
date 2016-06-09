@@ -13,7 +13,7 @@ import { Car } from '../car';
 
 export class CarFormComponent implements OnInit {
 
-  car = new Car(0, '', '', '');
+  car = new Car();
   constructor(public http: Http, public router: Router) {}
 
   ngOnInit() {
