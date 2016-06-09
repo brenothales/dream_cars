@@ -29,8 +29,13 @@ export class CarFormComponent implements OnInit {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    this.http.post('/api/cars.json', body, options)
-      .subscribe(response => this.router.navigate(['/car']));
+    if (this.id) {
+      this.http.patch('/api/cars/' + this.id + '.json', body, options)
+        .subscribe(response => this.router.navigate(['/car']));
+    } else {
+      this.http.post('/api/cars.json', body, options)
+        .subscribe(response => this.router.navigate(['/car']));
+    }
   }
 
 }

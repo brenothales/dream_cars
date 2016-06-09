@@ -21,6 +21,16 @@ class CarsController < ApplicationController
     render json: @car
   end
 
+  def update
+    @car = Car.find(params[:id])
+
+    if @car.update(car_params)
+      render json: @car, location: @car
+    else
+      render json: @car.errors, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @car = Car.find(params[:id])
     @car.destroy
