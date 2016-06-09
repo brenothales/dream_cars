@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 
 export class CarFormComponent implements OnInit {
 
-  car = new Car(0, '2002', 'BMW', '325xi');
+  car = new Car(0, '', '', '');
   constructor(public http: Http, public router: Router) {}
 
   ngOnInit() {
