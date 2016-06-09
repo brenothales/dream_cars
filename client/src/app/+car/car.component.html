@@ -1,9 +1,12 @@
-<ul>
-  <li *ngFor="let car of cars">
-    {{ car.year }}
-    {{ car.make }}
-    {{ car.model }}
-  </li>
-</ul>
-
 <button (click)="goToNew()">New car</button>
+
+<table border>
+  <tr *ngFor="let car of cars">
+    <td>
+      {{ car.year }}
+      {{ car.make }}
+      {{ car.model }}
+    </td>
+    <td><button (click)="delete(car.id)">Delete</button></td>
+  </tr>
+</table>
