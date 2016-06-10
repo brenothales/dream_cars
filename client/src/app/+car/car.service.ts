@@ -17,4 +17,16 @@ export class CarService {
 
     return this.http.delete('/api/cars/' + id + '.json');
   }
+
+  save(car, id) {
+    let body = JSON.stringify({ car: car });
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    if (id) {
+      return this.http.patch('/api/cars/' + id + '.json', body, options);
+    } else {
+      return this.http.post('/api/cars.json', body, options);
+    }
+  }
 }
