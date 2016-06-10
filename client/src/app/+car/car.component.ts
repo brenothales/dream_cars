@@ -1,26 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, HTTP_PROVIDERS, Headers, RequestOptions } from '@angular/http';
 import { Router } from '@angular/router';
+import { CarService } from './car.service'
 
 @Component({
   moduleId: module.id,
   selector: 'app-car',
   templateUrl: 'car.component.html',
-  styleUrls: ['car.component.css']
+  styleUrls: ['car.component.css'],
+  providers: [CarService]
 })
 
 export class CarComponent implements OnInit {
   cars: any;
 
-  constructor(public http: Http, public router: Router) {}
+  constructor(public http: Http,
+              public router: Router,
+              private carService: CarService) {}
 
   ngOnInit() {
     this.load();
   }
 
   load() {
-    this.http.get('/api/cars.json')
-      .subscribe(response => this.cars = response.json());
+    this.carService
+        .getCars()
+        .subscribe(response => this.cars = response.json());
   }
 
   edit(id: number) {
