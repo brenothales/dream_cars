@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, HTTP_PROVIDERS, Headers, RequestOptions } from '@angular/http';
+import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { CarService } from './car.service'
 
@@ -33,12 +33,7 @@ export class CarComponent implements OnInit {
   }
 
   delete(id: number) {
-    let body = JSON.stringify({ id: id });
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-
-    this.http.delete('/api/cars/' + id + '.json')
-      .subscribe(response => this.load());
+    this.carService.delete(id).subscribe(response => this.load());
   }
 
   goToNew() {
