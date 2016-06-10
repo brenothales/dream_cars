@@ -11,10 +11,6 @@ export class CarService {
   }
 
   delete(id: number) {
-    let body = JSON.stringify({ id: id });
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-
     return this.http.delete('/api/cars/' + id + '.json');
   }
 
